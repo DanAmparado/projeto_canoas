@@ -1,0 +1,477 @@
+.container {
+  padding: 25px 20px 60px;
+  background-color: transparent;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--accent-yellow);
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   FILTROS
+   ============================================================ */
+.filters {
+  background-color: var(--bg-card);
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 6px 6px 0 var(--accent-red-dark);
+  padding: 20px 18px;
+  margin-bottom: 30px;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.filterRow:last-child {
+  margin-bottom: 0;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filterGroup label {
+  color: var(--accent-yellow);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.filterGroup select,
+.filterGroup input {
+  padding: 8px 10px;
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 2px solid var(--border-muted);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.filterGroup select:focus,
+.filterGroup input:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+}
+
+.filterActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary,
+.btnExport {
+  padding: 9px 18px;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s, color 0.2s;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.btnPrimary {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.btnPrimary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  box-shadow: 4px 4px 0 var(--text-primary);
+}
+
+.btnSecondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--text-primary);
+}
+
+.btnExport {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.btnExport:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.btnExport:disabled {
+  background-color: #6c757d;
+  color: #ffffff;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   CONTADOR E TABELA
+   ============================================================ */
+.totalCount {
+  color: var(--accent-yellow);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 6px 6px 0 var(--accent-red-dark);
+  background-color: var(--bg-card);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.table th,
+.table td {
+  border: 1px solid var(--border-muted);
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background-color: #000000;
+  color: var(--accent-yellow);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--accent-yellow);
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 200, 0, 0.04);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 200, 0, 0.08);
+}
+
+.btnDetail {
+  padding: 6px 14px;
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border: 2px solid #000000;
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000000;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border-radius: 0;
+}
+
+.btnDetail:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000000;
+}
+
+/* ============================================================
+   PAGINAÇÃO
+   ============================================================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--accent-yellow);
+  border: 2px solid var(--accent-yellow);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 0;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--accent-yellow);
+  color: #000000;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   ESTADOS
+   ============================================================ */
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--bg-card);
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 6px 6px 0 var(--accent-red-dark);
+}
+
+.error {
+  color: var(--error-text);
+  background-color: var(--error-bg);
+  border: 2px solid var(--error-text);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   MODAL DE DETALHES
+   ============================================================ */
+.detalhes {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.detalhes h3 {
+  margin: 20px 0 10px 0;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--accent-yellow);
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--accent-yellow);
+  padding-bottom: 6px;
+}
+
+.detalhes h3:first-child {
+  margin-top: 0;
+}
+
+.detalhes p {
+  margin: 6px 0;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.detalhes p strong {
+  color: var(--accent-yellow);
+  font-weight: 800;
+}
+
+.observacoesCompletas {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-muted);
+  padding: 12px;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: 1.6;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.jsonData {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-muted);
+  padding: 12px;
+  font-size: 0.85rem;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   MODO ALTO CONTRASTE
+   ============================================================ */
+:global(html.alto-contraste) .filters,
+:global(html.alto-contraste) .tableWrapper,
+:global(html.alto-contraste) .empty {
+  border-color: #FFFFFF;
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .table th {
+  background-color: #000000;
+  color: var(--accent-yellow);
+  border-bottom-color: #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnPrimary,
+:global(html.alto-contraste) .btnExport,
+:global(html.alto-contraste) .btnDetail {
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnPrimary:hover,
+:global(html.alto-contraste) .btnExport:hover:not(:disabled),
+:global(html.alto-contraste) .btnDetail:hover {
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnSecondary {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 4px 4px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnSecondary:hover {
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+  .filterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    min-width: 100%;
+  }
+
+  .filterActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterActions button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 12px 40px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .filters {
+    padding: 15px 12px;
+    box-shadow: 4px 4px 0 var(--accent-red-dark);
+  }
+
+  .tableWrapper {
+    box-shadow: 4px 4px 0 var(--accent-red-dark);
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .empty {
+    padding: 30px 15px;
+    box-shadow: 4px 4px 0 var(--accent-red-dark);
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pagination button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .pagination span {
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableWrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tableWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aviso visual de que a tabela pode ser rolada */
+  .tableWrapper {
+    position: relative;
+  }
+
+  .tableWrapper::after {
+    content: '→ deslize para ver mais';
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding: 6px;
+    font-weight: 700;
+  }
+}

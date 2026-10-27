@@ -1,0 +1,149 @@
+.container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.card {
+  max-width: 640px;
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 10px 10px 0 var(--accent-red-dark);
+  padding: 0;
+  text-align: center;
+}
+
+.tituloBox {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  padding: 20px;
+  border-bottom: 3px solid #000000;
+}
+
+.tituloBox h1 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.corpoBox {
+  padding: 30px 25px 20px;
+}
+
+.message {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 0 25px 30px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-block;
+  padding: 12px 25px;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: 2px solid #000000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btnPrimary {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.btnPrimary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+  text-decoration: none;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--accent-yellow);
+  border: 2px solid var(--accent-yellow);
+  box-shadow: 4px 4px 0 var(--accent-yellow);
+}
+
+.btnSecondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent-yellow);
+  text-decoration: none;
+}
+
+/* Modo alto contraste */
+:global(html.alto-contraste) .card {
+  border-color: #FFFFFF;
+  box-shadow: 10px 10px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .tituloBox {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border-bottom-color: #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnPrimary {
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnPrimary:hover {
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .btnSecondary {
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  box-shadow: 4px 4px 0 var(--accent-yellow);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .card {
+    box-shadow: 6px 6px 0 var(--accent-red-dark);
+  }
+
+  .tituloBox h1 {
+    font-size: 1.4rem;
+  }
+
+  .corpoBox {
+    padding: 25px 18px 15px;
+  }
+
+  .message {
+    font-size: 0.95rem;
+  }
+
+  .buttons {
+    padding: 0 18px 25px;
+    gap: 12px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,148 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.card {
+  max-width: 420px;
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 8px 8px 0 var(--accent-red-dark);
+  padding: 30px;
+}
+
+.tituloBox {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  padding: 12px 15px;
+  text-align: center;
+  border: 2px solid #000000;
+  margin-bottom: 15px;
+}
+
+.tituloBox h1 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.error {
+  color: var(--error-text);
+  background-color: var(--error-bg);
+  border: 2px solid var(--error-text);
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  color: var(--accent-yellow);
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 2px solid var(--border-muted);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border: 2px solid #000000;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.button:disabled {
+  background-color: #6c757d;
+  color: #ffffff;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Modo alto contraste */
+:global(html.alto-contraste) .card {
+  border-color: #FFFFFF;
+  box-shadow: 8px 8px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .tituloBox {
+  background-color: var(--accent-yellow);
+  color: #000000;
+}
+
+:global(html.alto-contraste) .button {
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px 0 #FFFFFF;
+}
+
+:global(html.alto-contraste) .button:hover:not(:disabled) {
+  box-shadow: 6px 6px 0 #FFFFFF;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+
+  .tituloBox h1 {
+    font-size: 1.2rem;
+  }
+}

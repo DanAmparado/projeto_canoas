@@ -1,0 +1,21 @@
+.toggle {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.2s, transform 0.1s;
+  font-family: var(--font-body);
+}
+
+.toggle:hover {
+  background-color: #ffe066;
+}
+
+.toggle:active {
+  transform: translateY(1px);
+}
