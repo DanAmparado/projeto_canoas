@@ -5,7 +5,6 @@ import styles from './PublicNavbar.module.css';
 
 const PublicNavbar = () => {
   const location = useLocation();
-
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -14,11 +13,8 @@ const PublicNavbar = () => {
         <Link to="/" className={isActive('/') ? styles.active : ''}>
           Início
         </Link>
-        <Link to="/manifesto" className={isActive('/manifesto') ? styles.active : ''}>
-          Manifesto
-        </Link>
         <Link to="/formulario" className={isActive('/formulario') ? styles.active : ''}>
-          Enviar denúncia
+          Enviar mensagem
         </Link>
       </div>
       <div className={styles.rightSection}>

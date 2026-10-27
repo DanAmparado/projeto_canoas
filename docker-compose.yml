@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: postgres_novo_projeto
+    environment:
+      POSTGRES_DB: novo_projeto_db
+      POSTGRES_USER: novo_projeto_user
+      POSTGRES_PASSWORD: senha_local
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_novo_projeto_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_novo_projeto_data:

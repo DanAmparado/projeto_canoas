@@ -6,7 +6,6 @@ import Layout from './components/shared/Layout';
 import PublicLayout from './components/shared/PublicLayout';
 import Login from './pages/Login';
 import Home from './pages/Home';
-import Manifesto from './pages/Manifesto';
 import FormularioPublico from './pages/FormularioPublico';
 import Obrigado from './pages/Obrigado';
 import Dashboard from './pages/Dashboard';
@@ -22,7 +21,6 @@ function App() {
           {/* Rotas públicas com navbar própria */}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/manifesto" element={<Manifesto />} />
             <Route path="/formulario" element={<FormularioPublico />} />
             <Route path="/obrigado" element={<Obrigado />} />
           </Route>

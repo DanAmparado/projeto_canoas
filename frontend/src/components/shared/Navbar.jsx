@@ -23,7 +23,6 @@ const Navbar = () => {
         {user.role === 'admin' && (
           <Link to="/gestao/usuarios">Gerenciar Usuários</Link>
         )}
-        <Link to="/manifesto">Manifesto</Link>
         <Link to="/">Site público</Link>
       </div>
       <div className={styles.rightSection}>

@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'accounts',
-    'pesquisa',
+    'respostas',
 ]
 
 MIDDLEWARE = [
@@ -67,11 +67,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Banco de dados: usa DATABASE_URL (Supabase)
+import os
+# Carrega a URL do banco
+db_url = os.getenv('DATABASE_URL', '')
+
+# Exige SSL apenas se não for local
+ssl_required = 'localhost' not in db_url and '127.0.0.1' not in db_url
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
+        default=db_url,
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=ssl_required
     )
 }
 

@@ -1,0 +1,54 @@
+# ================================
+# Python / Django
+# ================================
+venv/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+db.sqlite3
+*.log
+staticfiles/
+media/
+local_settings.py
+
+# ================================
+# Variáveis de Ambiente
+# ================================
+.env
+.env.local
+.env.*.local
+# Exceto os arquivos de exemplo, que devem ser versionados
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# ================================
+# Node / React / Vite
+# ================================
+node_modules/
+dist/
+build/
+.vite/
+.vite-temp/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ================================
+# Editores / IDEs
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ================================
+# Sistema Operacional
+# ================================
+.DS_Store
+Thumbs.db
+desktop.ini
