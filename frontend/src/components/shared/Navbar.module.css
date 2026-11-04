@@ -3,11 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 25px;
-  background-color: #000000;
-  border-bottom: 3px solid var(--accent-yellow);
+  background-color: var(--canoas-blue);
+  border-bottom: 4px solid var(--canoas-red);
   color: var(--text-primary);
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  gap: 15px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -15,151 +13,94 @@
 
 .leftLinks {
   display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .leftLinks a {
-  color: var(--accent-yellow);
-  white-space: nowrap;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: none;
+  color: var(--canoas-cream);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
   text-decoration: none;
-  padding-bottom: 3px;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
-  letter-spacing: 0.01em;
+  transition: color 0.2s;
 }
 
 .leftLinks a:hover {
-  border-bottom-color: var(--accent-yellow);
+  color: #FFFFFF;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-shrink: 0;
 }
 
 .userInfo {
-  color: var(--text-primary);
-  white-space: nowrap;
-  font-family: var(--font-body);
+  color: var(--canoas-cream);
   font-size: 0.9rem;
-  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .role {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  font-size: 0.7rem;
+  background-color: var(--canoas-green);
+  color: #FFFFFF;
   padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  font-family: var(--font-body);
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .logoutButton {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 2px solid var(--accent-yellow);
-  padding: 6px 14px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: none;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-family: var(--font-title);
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  white-space: nowrap;
+  transition: transform 0.2s;
 }
 
 .logoutButton:hover {
-  background-color: transparent;
-  color: var(--accent-yellow);
+  transform: scale(1.05);
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .navbar {
-  background-color: #000000;
-  border-bottom: 3px solid #FFFFFF;
+/* Alto Contraste */
+html.alto-contraste .navbar {
+  background-color: #000000 !important;
+  border-bottom-color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .leftLinks a {
-  color: #FFFFFF;
+html.alto-contraste .leftLinks a,
+html.alto-contraste .userInfo {
+  color: #FFC800 !important;
 }
 
-:global(html.alto-contraste) .leftLinks a:hover {
-  border-bottom-color: #FFFFFF;
+html.alto-contraste .role {
+  background-color: #000000 !important;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .role {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-:global(html.alto-contraste) .logoutButton {
-  background-color: #FFFFFF;
-  color: #000000;
-  border-color: #FFFFFF;
-}
-
-:global(html.alto-contraste) .logoutButton:hover {
-  background-color: transparent;
-  color: #FFFFFF;
+html.alto-contraste .logoutButton {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
 /* Responsividade */
 @media (max-width: 900px) {
   .navbar {
     flex-direction: column;
-    align-items: stretch;
-    padding: 12px 15px;
-    gap: 12px;
-  }
-
-  .leftLinks {
     gap: 15px;
-    justify-content: center;
+    padding: 15px;
   }
-
-  .rightSection {
-    justify-content: center;
-    border-top: 1px solid rgba(255, 200, 0, 0.3);
-    padding-top: 12px;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    padding: 10px 12px;
-  }
-
   .leftLinks {
-    gap: 12px;
-  }
-
-  .leftLinks a {
-    font-size: 0.8rem;
-  }
-
-  .userInfo {
-    font-size: 0.8rem;
-  }
-
-  .logoutButton {
-    font-size: 0.8rem;
-    padding: 5px 12px;
-  }
-
-  .rightSection {
-    gap: 10px;
+    justify-content: center;
   }
 }

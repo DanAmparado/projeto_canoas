@@ -6,41 +6,44 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1>Bem-vindo ao nosso formulário</h1>
+        <h1>EM DEFESA DO RIO CANOAS</h1>
         <p className={styles.subtitle}>
-          Este é um espaço para você enviar sua mensagem de forma simples e segura.
+          Contra a privatização da nossa água e pela organização da classe trabalhadora.
         </p>
       </header>
 
       <section className={styles.blocoPrincipal}>
         <div className={styles.caixaTitulo}>
-          <h1>Como funciona</h1>
+          <h1>O futuro da água de Franca está em jogo</h1>
         </div>
         <div className={styles.caixaCorpo}>
           <p>
-            Preencha o formulário com seu nome, e-mail (opcional) e a sua mensagem.
-            As respostas são armazenadas em nosso banco de dados de forma segura.
+            O Projeto de Lei Complementar 11/2026 pretende privatizar a Macrozona do Rio Canoas,
+            ameaçando o abastecimento de cerca de 150 mil moradores.
           </p>
           <p>
-            A equipe administrativa poderá visualizar as respostas em um painel
-            restrito e exportar os dados em formato CSV quando necessário.
+            Precisamos nos organizar para defender o Rio Canoas e garantir água de qualidade
+            para toda a população.
           </p>
         </div>
       </section>
 
       <section className={styles.ctaSection}>
         <div className={styles.caixaTitulo}>
-          <h2>Pronto para enviar?</h2>
+          <h2>Participe da mobilização</h2>
         </div>
         <div className={styles.ctaBox}>
+          <Link to="/manifesto" className={styles.btnSecondary}>
+            Leia a nota política completa
+          </Link>
           <Link to="/formulario" className={styles.btnPrimary}>
-            Ir para o formulário
+            Enviar denúncia / relato
           </Link>
         </div>
       </section>
 
       <footer className={styles.footer}>
-        <p>Seus dados estão seguros.</p>
+        <p>Defender o Canoas é defender a vida.</p>
         <Link to="/gestao/login" className={styles.adminLink}>
           Área restrita
         </Link>

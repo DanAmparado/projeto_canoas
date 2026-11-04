@@ -1,300 +1,173 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 60px);
-  background-color: transparent;
-  color: var(--text-primary);
-  gap: 40px;
-  padding-bottom: 20px;
-}
-
-/* ============================================================
-   BANNER
-   ============================================================ */
-.header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px 0;
-  background-color: transparent;
-}
-
-.bannerImage {
-  width: 100%;
-  max-width: 1100px;
-  height: auto;
-  display: block;
-}
-
-/* ============================================================
-   BLOCOS DE CONTEÚDO (caixa amarela + caixa preta)
-   ============================================================ */
-.blocoPrincipal,
-.blocoSecundario,
-.ctaSection {
-  max-width: 820px;
+  min-height: calc(100vh - 80px);
+  padding: 40px 20px;
+  max-width: 900px;
   margin: 0 auto;
+  gap: 30px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 4rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--canoas-cream);
+  font-family: var(--font-marker);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+.blocoPrincipal, .ctaSection {
   width: 100%;
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
 }
 
 .caixaTitulo {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 3px solid #000000;
-  padding: 12px 20px;
-  box-shadow: 5px 5px 0 #000000;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 2;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
+  border-radius: 20px 20px 0 0;
+  padding: 15px 25px;
+  text-align: center;
 }
 
-.caixaTitulo h1,
-.caixaTitulo h2 {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  text-transform: uppercase;
+.caixaTitulo h1, .caixaTitulo h2 {
+  font-size: 2rem;
   margin: 0;
-  letter-spacing: 0.03em;
-  line-height: 1.15;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
-.caixaCorpo {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  border-top: none;
-  padding: 25px 22px;
-  box-shadow: 5px 5px 0 var(--accent-red-dark);
+.caixaCorpo, .ctaBox {
+  background-color: var(--canoas-blue);
+  color: var(--text-primary);
+  border-radius: 0 0 20px 20px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .caixaCorpo p {
-  color: var(--text-primary);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin-bottom: 15px;
-  font-weight: 700;
+  text-align: left;
 }
 
 .caixaCorpo p:last-child {
   margin-bottom: 0;
 }
 
-.caixaCorpo strong {
-  color: var(--accent-yellow);
-}
-
-/* ============================================================
-   CHAMADA PARA AÇÃO
-   ============================================================ */
 .ctaBox {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  border-top: none;
-  padding: 30px 22px;
-  box-shadow: 5px 5px 0 var(--accent-red-dark);
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
 }
 
-.btnPrimary,
-.btnSecondary,
-.btnTertiary {
-  display: inline-block;
-  padding: 14px 30px;
-  font-family: var(--font-title);
-  font-size: 1.05rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  border: 3px solid #000000;
-  transition: transform 0.1s, box-shadow 0.1s;
-  text-align: center;
+.btnPrimary, .btnSecondary {
+  display: block;
   width: 100%;
   max-width: 400px;
+  text-align: center;
+  padding: 15px;
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.2s;
 }
 
 .btnPrimary {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  box-shadow: 5px 5px 0 #000000;
-}
-
-.btnPrimary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 #000000;
-  text-decoration: none;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
 }
 
 .btnSecondary {
   background-color: transparent;
-  color: var(--accent-yellow);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 5px 5px 0 var(--accent-yellow);
-}
-
-.btnSecondary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--accent-yellow);
-  text-decoration: none;
-}
-
-.btnTertiary {
-  background-color: transparent;
   color: var(--text-primary);
-  border: 3px solid var(--text-primary);
-  box-shadow: 5px 5px 0 var(--text-primary);
-  font-size: 0.9rem;
+  border: 2px solid var(--text-primary);
 }
 
-.btnTertiary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--text-primary);
+.btnPrimary:hover, .btnSecondary:hover {
+  transform: scale(1.02);
   text-decoration: none;
 }
 
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
 .footer {
+  margin-top: auto;
   text-align: center;
-  padding: 25px 20px;
-  border-top: 2px solid var(--accent-yellow);
-  color: var(--text-muted);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent;
-  margin-top: 20px;
-}
-
-.footer p {
-  font-size: 0.9rem;
-  font-weight: 700;
+  padding-top: 40px;
+  color: var(--canoas-cream);
 }
 
 .adminLink {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--canoas-cream);
   opacity: 0.6;
-  transition: opacity 0.2s;
-  font-weight: 700;
 }
 
 .adminLink:hover {
   opacity: 1;
-  text-decoration: underline;
 }
 
 /* ============================================================
-   MODO ALTO CONTRASTE
+   ALTO CONTRASTE
    ============================================================ */
-:global(html.alto-contraste) .caixaTitulo {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border-color: #FFFFFF;
-  box-shadow: 5px 5px 0 #FFFFFF;
+html.alto-contraste .header h1 {
+  text-shadow: none !important;
+  color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .caixaCorpo,
-:global(html.alto-contraste) .ctaBox {
-  border-color: #FFFFFF;
-  box-shadow: 5px 5px 0 #FFFFFF;
+html.alto-contraste .subtitle {
+  color: #FFC800 !important; /* Força a fonte de canetão a ser amarela */
 }
 
-:global(html.alto-contraste) .btnPrimary,
-:global(html.alto-contraste) .btnSecondary,
-:global(html.alto-contraste) .btnTertiary {
-  border-color: #FFFFFF;
-  box-shadow: 5px 5px 0 #FFFFFF;
+html.alto-contraste .footer,
+html.alto-contraste .adminLink {
+  color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .btnPrimary:hover,
-:global(html.alto-contraste) .btnSecondary:hover,
-:global(html.alto-contraste) .btnTertiary:hover {
-  box-shadow: 7px 7px 0 #FFFFFF;
+html.alto-contraste .caixaTitulo {
+  background-color: #1a1a1a !important; /* Cinza escuro para destacar do fundo */
+  border: 2px solid #FFFFFF !important;
+  border-bottom: none !important;
 }
 
-:global(html.alto-contraste) .footer {
-  border-top-color: #FFFFFF;
+html.alto-contraste .caixaTitulo h1,
+html.alto-contraste .caixaTitulo h2 {
+  color: #FFC800 !important;
 }
 
-/* ============================================================
-   RESPONSIVIDADE
-   ============================================================ */
-@media (max-width: 600px) {
-  .container {
-    gap: 25px;
-  }
+html.alto-contraste .caixaCorpo,
+html.alto-contraste .ctaBox {
+  background-color: #1a1a1a !important; /* Cinza escuro */
+  border: 2px solid #FFFFFF !important;
+  border-top: none !important;
+}
 
-  .blocoPrincipal,
-  .blocoSecundario,
-  .ctaSection {
-    padding: 0 15px;
-  }
+html.alto-contraste .caixaCorpo p {
+  color: #FFC800 !important;
+}
 
-  .caixaTitulo {
-    padding: 10px 15px;
-    box-shadow: 3px 3px 0 #000000;
-  }
+html.alto-contraste .btnPrimary {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
 
-  .caixaTitulo h1,
-  .caixaTitulo h2 {
-    font-size: 1.05rem;
-  }
-
-  .caixaCorpo {
-    padding: 18px 15px;
-    box-shadow: 3px 3px 0 var(--accent-red-dark);
-  }
-
-  .caixaCorpo p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-  }
-
-  .ctaBox {
-    padding: 22px 15px;
-    box-shadow: 3px 3px 0 var(--accent-red-dark);
-  }
-
-  .btnPrimary,
-  .btnSecondary,
-  .btnTertiary {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    box-shadow: 3px 3px 0 currentColor;
-  }
-
-  .btnPrimary {
-    box-shadow: 3px 3px 0 #000000;
-  }
-
-  .btnPrimary:hover {
-    box-shadow: 5px 5px 0 #000000;
-  }
-
-  .btnSecondary {
-    box-shadow: 3px 3px 0 var(--accent-yellow);
-  }
-
-  .btnSecondary:hover {
-    box-shadow: 5px 5px 0 var(--accent-yellow);
-  }
-
-  .btnTertiary {
-    box-shadow: 3px 3px 0 var(--text-primary);
-  }
-
-  .btnTertiary:hover {
-    box-shadow: 5px 5px 0 var(--text-primary);
-  }
+html.alto-contraste .btnSecondary {
+  background-color: #000000 !important;
+  border: 2px solid #FFC800 !important;
+  color: #FFC800 !important;
 }

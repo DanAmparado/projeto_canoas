@@ -4,145 +4,128 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: transparent;
+  background-color: var(--bg-body);
+  background-image: radial-gradient(circle at center, #7A1113 0%, #5E0000 100%);
 }
 
 .card {
   max-width: 420px;
   width: 100%;
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 8px 8px 0 var(--accent-red-dark);
-  padding: 30px;
+  background-color: var(--canoas-blue);
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 .tituloBox {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  padding: 12px 15px;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
+  padding: 25px;
   text-align: center;
-  border: 2px solid #000000;
-  margin-bottom: 15px;
 }
 
 .tituloBox h1 {
   font-family: var(--font-title);
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  font-size: 2.5rem;
   margin: 0;
-  letter-spacing: 0.05em;
 }
 
 .subtitle {
   text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 25px;
-}
-
-.error {
-  color: var(--error-text);
-  background-color: var(--error-bg);
-  border: 2px solid var(--error-text);
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 700;
+  color: var(--canoas-cream);
+  padding: 20px 20px 0;
+  font-size: 1rem;
 }
 
 .form {
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .field label {
-  color: var(--accent-yellow);
-  font-family: var(--font-title);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--canoas-cream);
+  font-weight: 600;
 }
 
 .field input {
-  width: 100%;
-  padding: 10px 12px;
-  background-color: var(--bg-input);
-  color: var(--text-primary);
-  border: 2px solid var(--border-muted);
-  border-radius: 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid var(--canoas-green);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
   font-family: var(--font-body);
-  font-weight: 700;
   font-size: 1rem;
-  transition: border-color 0.2s;
 }
 
 .field input:focus {
   outline: none;
-  border-color: var(--accent-yellow);
+  border-color: var(--canoas-cream);
 }
 
 .button {
   width: 100%;
-  padding: 12px;
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 2px solid #000000;
+  padding: 15px;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
   font-family: var(--font-title);
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
-  box-shadow: 4px 4px 0 #000000;
+  transition: transform 0.2s;
 }
 
 .button:hover:not(:disabled) {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
+  transform: scale(1.02);
 }
 
-.button:disabled {
-  background-color: #6c757d;
-  color: #ffffff;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
+.error {
+  margin: 0 25px;
+  padding: 15px;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .card {
-  border-color: #FFFFFF;
-  box-shadow: 8px 8px 0 #FFFFFF;
+/* Alto Contraste */
+html.alto-contraste .container {
+  background-image: none !important;
+  background-color: #000000 !important;
 }
 
-:global(html.alto-contraste) .tituloBox {
-  background-color: var(--accent-yellow);
-  color: #000000;
+html.alto-contraste .card {
+  background-color: #1a1a1a !important;
+  border: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .button {
-  border-color: #FFFFFF;
-  box-shadow: 4px 4px 0 #FFFFFF;
+html.alto-contraste .tituloBox {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .button:hover:not(:disabled) {
-  box-shadow: 6px 6px 0 #FFFFFF;
+html.alto-contraste .tituloBox h1,
+html.alto-contraste .subtitle,
+html.alto-contraste .field label {
+  color: #FFC800 !important;
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
-  .card {
-    padding: 20px;
-  }
+html.alto-contraste .field input {
+  background-color: #000000 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
 
-  .tituloBox h1 {
-    font-size: 1.2rem;
-  }
+html.alto-contraste .button {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
 }

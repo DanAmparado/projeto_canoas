@@ -2,25 +2,25 @@
    VARIÁVEIS — IDENTIDADE RIO CANOAS
    ============================================================ */
 :root {
-  /* Cores baseadas nas artes do Canva */
-  --bg-body: #7A1113;        /* Vermelho Sangue */
+  /* Cores base do site */
+  --bg-body: #7A1113;
   --bg-body-alt: #5E0000;
-  --bg-card: #111133;        /* Azul Escuro */
+  --bg-card: #111133;
   --bg-card-alt: #1A1A4A;
   --bg-input: #1A1A4A;
   --bg-navbar: #7A1113;
   --bg-table-header: #111133;
   --bg-table-striped: #1A1A4A;
 
-  --text-primary: #E8E3D2;   /* Creme */
-  --text-secondary: #C11A1A; /* Vermelho Alerta */
+  --text-primary: #E8E3D2;
+  --text-secondary: #C11A1A;
   --text-muted: #B0B0C0;
   --text-inverse: #111133;
 
   --border-color: #E8E3D2;
-  --border-muted: #5E6E45;   /* Verde Oliva */
+  --border-muted: #5E6E45;
 
-  --accent-yellow: #E8E3D2;  /* Substituindo o amarelo pelo creme */
+  --accent-yellow: #E8E3D2;
   --accent-red: #C11A1A;
   --accent-red-dark: #5E0000;
   --accent-green: #5E6E45;
@@ -31,6 +31,13 @@
   --error-text: #E8E3D2;
 
   --shadow-color: rgba(0, 0, 0, 0.5);
+
+  /* Cores Exclusivas das Caixas do Canva */
+  --canoas-red: #7A1113;
+  --canoas-blue: #111133;
+  --canoas-green: #5E6E45;
+  --canoas-cream: #E8E3D2;
+  --canoas-alert: #C11A1A;
 
   /* Fontes */
   --font-title: 'Bebas Neue', 'Oswald', sans-serif;
@@ -44,9 +51,9 @@
 html.alto-contraste {
   --bg-body: #000000;
   --bg-body-alt: #0a0a0a;
-  --bg-card: #0a0a0a;
-  --bg-card-alt: #1a1a1a;
-  --bg-input: #1a1a1a;
+  --bg-card: #1a1a1a;
+  --bg-card-alt: #222222;
+  --bg-input: #222222;
   --bg-navbar: #000000;
   --bg-table-header: #1a1a1a;
   --bg-table-striped: #0f0f0f;
@@ -54,7 +61,7 @@ html.alto-contraste {
   --text-primary: #FFC800;
   --text-secondary: #FFFFFF;
   --text-muted: #cccccc;
-  --text-inverse: #000000;
+  --text-inverse: #FFFFFF;
 
   --border-color: #FFFFFF;
   --border-muted: #333333;
@@ -82,16 +89,16 @@ html.alto-contraste {
 
 body {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 600;
   background-color: var(--bg-body);
-  /* Fundo com padrão sutil de mapa (opcional, pode ser removido) */
   background-image: radial-gradient(circle at center, #7A1113 0%, #5E0000 100%);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.015em;
   min-height: 100vh;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.02em;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html.alto-contraste body {
@@ -138,13 +145,8 @@ input, select, textarea {
 /* ============================================================
    UTILITÁRIOS
    ============================================================ */
-.text-center {
-  text-align: center;
-}
-
-.text-muted {
-  color: var(--text-muted);
-}
+.text-center { text-align: center; }
+.text-muted { color: var(--text-muted); }
 
 .mt-1 { margin-top: 0.25rem; }
 .mt-2 { margin-top: 0.5rem; }
@@ -159,29 +161,31 @@ input, select, textarea {
   padding: 0 15px;
 }
 
-/* Classes Utilitárias para o Estilo do Canva */
+/* ============================================================
+   CLASSES UTILITÁRIAS DO CANVA
+   ============================================================ */
 .marker-font {
   font-family: var(--font-marker);
   text-transform: none;
 }
 
 .caixa-creme {
-  background-color: var(--text-primary);
+  background-color: var(--canoas-cream);
   color: var(--text-inverse);
   border-radius: 20px;
   padding: 20px;
 }
 
 .caixa-azul {
-  background-color: var(--bg-card);
-  color: var(--text-primary);
+  background-color: var(--canoas-blue);
+  color: var(--canoas-cream);
   border-radius: 20px;
   padding: 20px;
 }
 
 .caixa-verde {
-  background-color: var(--accent-green);
-  color: var(--text-primary);
+  background-color: var(--canoas-green);
+  color: var(--canoas-cream);
   border-radius: 20px;
   padding: 20px;
 }
@@ -207,7 +211,7 @@ input, select, textarea {
 }
 
 .caixaCorpo p {
-  font-size: 0.95rem;  /* era 1rem */
+  font-size: 0.95rem;
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
@@ -285,7 +289,7 @@ input, select, textarea {
 }
 
 /* ============================================================
-   PLACEHOLDERS E FOCO (acessibilidade)
+   PLACEHOLDERS E FOCO (ACESSIBILIDADE)
    ============================================================ */
 input::placeholder,
 textarea::placeholder {
@@ -299,7 +303,6 @@ html.alto-contraste textarea::placeholder {
   color: #999999;
 }
 
-/* Foco visível para navegação por teclado */
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
@@ -310,7 +313,6 @@ a:focus-visible,
   outline-offset: 2px;
 }
 
-/* No modo alto contraste, o outline fica branco */
 html.alto-contraste input:focus-visible,
 html.alto-contraste select:focus-visible,
 html.alto-contraste textarea:focus-visible,
@@ -320,21 +322,10 @@ html.alto-contraste [tabindex]:focus-visible {
   outline-color: #FFFFFF;
 }
 
-/* Renderização de texto mais confortável */
-body {
-  font-weight: 600;
-  line-height: 1.7;
-  letter-spacing: 0.015em;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* ============================================================
-   ÁREA DE TOQUE MÍNIMA (mobile)
+   ÁREA DE TOQUE MÍNIMA (MOBILE)
    ============================================================ */
 @media (max-width: 768px) {
-  /* Checkboxes e radios: alvo mínimo de 44x44px */
   input[type="checkbox"],
   input[type="radio"] {
     width: 24px;
@@ -343,14 +334,12 @@ body {
     min-height: 24px;
   }
 
-  /* Labels clicáveis com padding extra para aumentar a área tocável */
   label {
     min-height: 44px;
     display: flex;
     align-items: center;
   }
 
-  /* Botões com altura mínima */
   button,
   .btnPrimary,
   .btnSecondary,
@@ -365,7 +354,6 @@ body {
     padding: 10px 16px;
   }
 
-  /* Links da navbar com área de toque confortável */
   nav a {
     min-height: 44px;
     display: inline-flex;
@@ -373,7 +361,6 @@ body {
     padding: 4px 8px;
   }
 
-  /* Inputs e selects com altura mínima para toque */
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -382,10 +369,9 @@ body {
   select,
   textarea {
     min-height: 44px;
-    font-size: 16px; /* evita zoom automático no iOS */
+    font-size: 16px;
   }
 
-  /* Link "Área restrita" no rodapé com área de toque */
   .adminLink {
     min-height: 44px;
     display: inline-flex;
@@ -395,26 +381,22 @@ body {
 }
 
 /* ============================================================
-   ESCONDER BARRA DE ROLAGEM (mobile)
+   ESCONDER BARRA DE ROLAGEM (MOBILE)
    ============================================================ */
 @media (max-width: 768px) {
-  /* Firefox */
   * {
     scrollbar-width: none;
   }
 
-  /* Chrome, Safari, Edge */
   *::-webkit-scrollbar {
     display: none;
   }
 
-  /* Corrige possíveis problemas de overflow em containers com scroll */
   html,
   body {
     overflow-x: hidden;
   }
 
-  /* Permite que listas longas (ex: tabela) continuem roláveis */
   .tableWrapper,
   [class*="tableWrapper"] {
     -webkit-overflow-scrolling: touch;

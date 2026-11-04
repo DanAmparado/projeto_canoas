@@ -13,6 +13,9 @@ const PublicNavbar = () => {
         <Link to="/" className={isActive('/') ? styles.active : ''}>
           Início
         </Link>
+        <Link to="/manifesto" className={isActive('/manifesto') ? styles.active : ''}>
+          Manifesto
+        </Link>
         <Link to="/formulario" className={isActive('/formulario') ? styles.active : ''}>
           Enviar mensagem
         </Link>

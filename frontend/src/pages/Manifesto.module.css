@@ -13,15 +13,14 @@
 }
 
 .mainTitle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--text-primary);
-  letter-spacing: 0.1em;
   margin-bottom: 10px;
 }
 
 .subTitle {
   font-size: 1.8rem;
-  color: var(--accent-red);
+  color: var(--canoas-cream);
   font-family: var(--font-marker);
   line-height: 1.2;
 }
@@ -43,41 +42,43 @@
   margin-bottom: 0;
 }
 
+/* Classes das Caixas */
 .caixaCreme, .caixaVerde, .caixaAzul, .highlightBox, .callToAction, .finalCall {
   padding: 25px 30px;
   border-radius: 25px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 2px solid transparent; 
 }
 
 .caixaCreme {
-  background-color: var(--text-primary);
+  background-color: var(--canoas-cream);
   color: var(--text-inverse);
 }
 
 .caixaVerde {
-  background-color: var(--accent-green);
+  background-color: var(--canoas-green);
   color: var(--text-primary);
 }
 
 .caixaAzul {
-  background-color: var(--bg-card);
+  background-color: var(--canoas-blue);
   color: var(--text-primary);
 }
 
 .highlightBox {
-  background-color: var(--text-primary);
+  background-color: var(--canoas-cream);
   color: var(--text-inverse);
-  border: 4px solid var(--accent-red); /* Destaque vermelho */
+  border: 4px solid var(--canoas-alert);
 }
 
 .callToAction {
-  background-color: var(--accent-red);
+  background-color: var(--canoas-alert);
   color: var(--text-primary);
   font-weight: 700;
 }
 
 .finalCall {
-  background-color: var(--bg-card);
+  background-color: var(--canoas-blue);
   color: var(--text-primary);
   font-family: var(--font-marker);
   font-size: 1.3rem;
@@ -90,7 +91,6 @@
   font-size: 2rem;
   line-height: 1.2;
   margin: 30px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .buttons {
@@ -111,9 +111,9 @@
 }
 
 .btnPrimary {
-  background-color: var(--accent-red);
-  color: var(--text-primary);
-  border: none;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
+  border: 2px solid var(--canoas-alert);
 }
 
 .btnSecondary {
@@ -125,4 +125,54 @@
 .btnPrimary:hover, .btnSecondary:hover {
   transform: scale(1.05);
   text-decoration: none;
+}
+
+/* ============================================================
+   ALTO CONTRASTE
+   ============================================================ */
+html.alto-contraste .mainTitle,
+html.alto-contraste .subTitle,
+html.alto-contraste .slogan {
+  color: #FFC800 !important;
+}
+
+html.alto-contraste .caixaCreme,
+html.alto-contraste .caixaVerde,
+html.alto-contraste .caixaAzul,
+html.alto-contraste .highlightBox,
+html.alto-contraste .callToAction,
+html.alto-contraste .finalCall {
+  background-color: #1a1a1a !important; /* Cinza escuro */
+  border: 2px solid #FFFFFF !important;
+}
+
+html.alto-contraste .highlightBox {
+  border: 4px solid #FFFFFF !important;
+}
+
+/* Força o texto dentro das caixas a ser amarelo */
+html.alto-contraste .caixaCreme p,
+html.alto-contraste .caixaVerde p,
+html.alto-contraste .caixaAzul p,
+html.alto-contraste .highlightBox p,
+html.alto-contraste .callToAction p,
+html.alto-contraste .finalCall p {
+  color: #FFC800 !important;
+}
+
+/* Garante que a fonte de canetão no finalCall fique amarela */
+html.alto-contraste .finalCall {
+  color: #FFC800 !important; 
+}
+
+html.alto-contraste .btnPrimary {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+html.alto-contraste .btnSecondary {
+  background-color: #000000 !important;
+  border: 2px solid #FFC800 !important;
+  color: #FFC800 !important;
 }

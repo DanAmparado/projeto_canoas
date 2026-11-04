@@ -1,47 +1,45 @@
 .container {
-  max-width: 820px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 30px 20px 60px;
-  background-color: transparent;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .title {
-  font-family: var(--font-title);
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--accent-yellow);
+  font-size: 3rem;
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 10px;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
 }
 
 .intro {
   text-align: center;
-  color: var(--text-muted);
-  margin-bottom: 35px;
-  font-size: 1rem;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
-.success,
-.error {
+.success, .error {
   padding: 15px 20px;
-  margin-bottom: 25px;
+  border-radius: 20px;
   text-align: center;
-  font-weight: 700;
-  border: 2px solid;
+  font-weight: 600;
+  font-family: var(--font-body);
+  margin-bottom: 20px;
 }
 
 .success {
   background-color: var(--success-bg);
   color: var(--success-text);
-  border-color: var(--success-text);
+  border: 2px solid var(--success-text);
 }
 
 .error {
   background-color: var(--error-bg);
   color: var(--error-text);
-  border-color: var(--error-text);
+  border: 2px solid var(--error-text);
 }
 
 .form {
@@ -50,265 +48,94 @@
   gap: 30px;
 }
 
-/* Cada seção é um card preto com borda amarela */
+/* Estilo das Caixas do Canva */
 .section {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 8px 8px 0 var(--accent-red-dark);
-  padding: 0;
-  transition: background-color 0.3s, border-color 0.3s;
+  background-color: var(--canoas-blue);
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  border: 2px solid transparent;
 }
 
 .section h2 {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  font-family: var(--font-title);
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
   margin: 0;
-  padding: 12px 20px;
-  border-bottom: 3px solid #000000;
+  padding: 15px 25px;
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .section > p {
-  padding: 15px 20px 0;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  padding: 20px 25px 0;
+  color: var(--canoas-cream);
+  font-size: 1rem;
 }
 
-/* Campos dentro das seções */
 .field {
-  padding: 15px 20px 0;
-}
-
-.field:last-child {
-  padding-bottom: 20px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .field label {
-  display: block;
-  color: var(--accent-yellow);
+  color: var(--canoas-cream);
   font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .field input[type="text"],
-.field input[type="number"],
-.field textarea,
-.field select {
+.field input[type="email"],
+.field textarea {
   width: 100%;
-  padding: 10px 12px;
-  background-color: var(--bg-input);
+  padding: 12px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
   color: var(--text-primary);
-  border: 2px solid var(--border-muted);
-  border-radius: 0;
+  border: 2px solid var(--canoas-green);
+  border-radius: 10px;
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: border-color 0.2s, background-color 0.3s, color 0.3s;
-  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.2s;
 }
 
 .field input:focus,
-.field textarea:focus,
-.field select:focus {
+.field textarea:focus {
   outline: none;
-  border-color: var(--accent-yellow);
+  border-color: var(--canoas-cream);
 }
 
 .field textarea {
   resize: vertical;
-  min-height: 70px;
-  line-height: 1.5;
+  min-height: 120px;
 }
 
-/* Checkbox e múltipla escolha */
-.checkboxGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0 20px;
-}
-
-.checkboxGroup:first-of-type {
-  padding-top: 15px;
-}
-
-.checkboxGroup:last-of-type {
-  padding-bottom: 20px;
-}
-
-.checkboxGroup label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.checkboxGroup input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  flex-shrink: 0;
-  margin-top: 2px;
-  accent-color: var(--accent-yellow);
-}
-
-/* Escalas (radios 1 a 5) */
-.radioGroup {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 5px 0;
-}
-
-.radioGroup > span {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 700;
-  max-width: 120px;
-  line-height: 1.3;
-}
-
-.radioGroup label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
-  min-width: 40px;
-}
-
-.radioGroup input[type="radio"] {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  accent-color: var(--accent-yellow);
-}
-
-/* Botão de envio */
 .submitButton {
   width: 100%;
-  padding: 16px;
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 3px solid #000000;
+  padding: 18px;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
   font-family: var(--font-title);
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 1.8rem;
   cursor: pointer;
-  box-shadow: 6px 6px 0 #000000;
-  transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s;
-  border-radius: 0;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .submitButton:hover:not(:disabled) {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 #000000;
+  transform: scale(1.02);
 }
 
 .submitButton:disabled {
-  background-color: #6c757d;
-  color: #ffffff;
+  opacity: 0.6;
   cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .section {
-  border-color: #FFFFFF;
-  box-shadow: 8px 8px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .section h2 {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border-bottom-color: #FFFFFF;
-}
-
-:global(html.alto-contraste) .submitButton {
-  border-color: #FFFFFF;
-  box-shadow: 6px 6px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .submitButton:hover:not(:disabled) {
-  box-shadow: 8px 8px 0 #FFFFFF;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .container {
-    padding: 20px 12px 40px;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .section {
-    box-shadow: 5px 5px 0 var(--accent-red-dark);
-  }
-
-  .section h2 {
-    font-size: 0.95rem;
-    padding: 10px 15px;
-  }
-
-  .field {
-    padding: 12px 15px 0;
-  }
-
-  .field:last-child {
-    padding-bottom: 15px;
-  }
-
-  .checkboxGroup {
-    padding: 0 15px;
-  }
-
-  .checkboxGroup label,
-  .field label {
-    font-size: 0.9rem;
-  }
-
-  .radioGroup {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .radioGroup > span {
-    font-size: 0.75rem;
-    max-width: 100%;
-    text-align: center;
-    width: 100%;
-  }
-
-  .submitButton {
-    font-size: 1rem;
-    padding: 14px;
-  }
-}
-
-/* ============================================================
-   OVERLAY DE ENVIO (com aviso de cold start)
-   ============================================================ */
+/* Overlay */
 .submitOverlay {
   position: fixed;
   inset: 0;
@@ -321,227 +148,101 @@
 }
 
 .submitOverlayContent {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 8px 8px 0 var(--accent-red-dark);
-  padding: 35px 30px;
-  max-width: 480px;
-  width: 100%;
+  background-color: var(--canoas-blue);
+  border: 3px solid var(--canoas-cream);
+  border-radius: 25px;
+  padding: 40px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  max-width: 500px;
 }
 
 .overlayTitle {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  color: var(--accent-yellow);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin: 0;
-  line-height: 1.2;
+  font-size: 2rem;
+  color: var(--canoas-cream);
+  margin-bottom: 10px;
 }
 
 .overlayText {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.95rem;
   color: var(--text-primary);
-  line-height: 1.6;
-  margin: 0;
+  font-size: 1.1rem;
 }
 
-/* Spinner */
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid var(--border-muted);
-  border-top-color: var(--accent-yellow);
+  border: 4px solid var(--canoas-green);
+  border-top-color: var(--canoas-cream);
   border-radius: 50%;
-  animation: spin 0.9s linear infinite;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .submitOverlayContent {
-  border-color: #FFFFFF;
-  box-shadow: 8px 8px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .spinner {
-  border-color: #333333;
-  border-top-color: var(--accent-yellow);
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-  .submitOverlayContent {
-    padding: 25px 20px;
-    box-shadow: 5px 5px 0 var(--accent-red-dark);
-  }
-
-  .overlayTitle {
-    font-size: 1.1rem;
-  }
-
-  .overlayText {
-    font-size: 0.9rem;
-  }
-
-  .spinner {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* ============================================================
-   AVISO DE RASCUNHO RESTAURADO
-   ============================================================ */
+/* Rascunho */
 .draftNotice {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0 #000000;
-  padding: 12px 18px;
-  margin-bottom: 25px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.draftNotice span {
-  flex: 1;
-  min-width: 200px;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-weight: 600;
 }
 
 .draftClear {
-  background-color: #000000;
-  color: var(--accent-yellow);
-  border: 2px solid #000000;
-  padding: 6px 14px;
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.85rem;
+  background: none;
+  border: 2px solid var(--text-inverse);
+  color: var(--text-inverse);
+  padding: 5px 15px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
-  border-radius: 0;
-  white-space: nowrap;
-}
-
-.draftClear:hover {
-  background-color: var(--accent-red-dark);
-  color: #FFFFFF;
-}
-
-/* Modo alto contraste */
-:global(html.alto-contraste) .draftNotice {
-  border-color: #FFFFFF;
-  box-shadow: 4px 4px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .draftClear {
-  border-color: #FFFFFF;
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-  .draftNotice {
-    font-size: 0.85rem;
-    padding: 10px 14px;
-    box-shadow: 3px 3px 0 #000000;
-  }
-
-  .draftClear {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ============================================================
-   SPINNER DENTRO DO BOTÃO
-   ============================================================ */
-.buttonSpinner {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  border-top-color: #000000;
-  border-radius: 50%;
-  animation: buttonSpin 0.8s linear infinite;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-@keyframes buttonSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Ajuste do botão para alinhar o spinner com o texto */
-.submitButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-/* Modo alto contraste: spinner branco sobre botão amarelo */
-:global(html.alto-contraste) .buttonSpinner {
-  border-color: rgba(0, 0, 0, 0.3);
-  border-top-color: #000000;
-}
-
-/* Botão desabilitado: o spinner fica mais suave */
-.submitButton:disabled .buttonSpinner {
-  opacity: 0.7;
-}
-
-/* ============================================================
-   LEGENDA DO FORMULÁRIO
-   ============================================================ */
-.legend {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-left: 4px solid var(--accent-yellow);
-  padding: 12px 18px;
-  margin-bottom: 25px;
-  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text-primary);
 }
 
-.legend strong {
-  color: var(--accent-yellow);
-  font-weight: 800;
+/* ============================================================
+   ALTO CONTRASTE
+   ============================================================ */
+html.alto-contraste .section {
+  background-color: #1a1a1a !important;
+  border: 2px solid #FFFFFF !important;
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .legend {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left-color: #FFFFFF;
+html.alto-contraste .section h2 {
+  background-color: #000000 !important;
+  color: #FFC800 !important;
+  border-bottom: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .legend strong {
-  color: #FFFFFF;
+html.alto-contraste .field label,
+html.alto-contraste .field input,
+html.alto-contraste .field textarea,
+html.alto-contraste .section > p {
+  color: #FFC800 !important;
 }
 
-@media (max-width: 600px) {
-  .legend {
-    font-size: 0.85rem;
-    padding: 10px 14px;
-  }
+html.alto-contraste .field input,
+html.alto-contraste .field textarea {
+  background-color: #000000 !important;
+  border-color: #FFFFFF !important;
+}
+
+html.alto-contraste .submitButton {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+html.alto-contraste .draftNotice {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+html.alto-contraste .draftNotice span,
+html.alto-contraste .draftClear {
+  color: #FFC800 !important;
+  border-color: #FFC800 !important;
 }
