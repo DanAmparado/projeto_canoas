@@ -33,7 +33,7 @@ const ListagemRespostas = () => {
       setTotalCount(response.data.count);
       setTotalPages(Math.ceil(response.data.count / ITEMS_PER_PAGE));
     } catch (err) {
-      setError('Erro ao carregar respostas.');
+      setError('Erro ao carregar assinaturas.');
     } finally {
       setLoading(false);
     }
@@ -73,7 +73,7 @@ const ListagemRespostas = () => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `respostas_${new Date().toISOString().slice(0, 10)}.csv`);
+      link.setAttribute('download', `assinaturas_${new Date().toISOString().slice(0, 10)}.csv`);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -112,7 +112,7 @@ const ListagemRespostas = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Listagem de Respostas</h2>
+      <h2 className={styles.title}>Assinaturas do Abaixo-Assinado</h2>
       <p className={styles.subtitle}>Bem-vindo, {user?.username}!</p>
 
       <div className={styles.filters}>
@@ -140,10 +140,10 @@ const ListagemRespostas = () => {
       ) : error ? (
         <div className={styles.error}>{error}</div>
       ) : respostas.length === 0 ? (
-        <div className={styles.empty}>Nenhuma resposta encontrada.</div>
+        <div className={styles.empty}>Nenhuma assinatura encontrada.</div>
       ) : (
         <>
-          <p className={styles.totalCount}>Total: {totalCount} respostas</p>
+          <p className={styles.totalCount}>Total: {totalCount} assinaturas</p>
           <div className={styles.tableWrapper}>
             <table className={styles.table}>
               <thead>
@@ -151,6 +151,7 @@ const ListagemRespostas = () => {
                   <th>ID</th>
                   <th>Data/Hora</th>
                   <th>Nome</th>
+                  <th>Telefone</th>
                   <th>E-mail</th>
                   <th>Ações</th>
                 </tr>
@@ -161,6 +162,7 @@ const ListagemRespostas = () => {
                     <td>{item.id}</td>
                     <td>{formatDateTime(item.data_submissao)}</td>
                     <td>{item.nome || '-'}</td>
+                    <td>{item.telefone || '-'}</td>
                     <td>{item.email || '-'}</td>
                     <td>
                       <button className={styles.btnDetail} onClick={() => openModal(item)}>Ver</button>
@@ -181,16 +183,17 @@ const ListagemRespostas = () => {
         </>
       )}
 
-      <Modal isOpen={modalOpen} title={`Resposta #${selected?.id}`} onConfirm={closeModal} confirmText="Fechar">
+      <Modal isOpen={modalOpen} title={`Assinatura #${selected?.id}`} onConfirm={closeModal} confirmText="Fechar">
         {selected && (
           <div className={styles.detalhes}>
             <p><strong>ID:</strong> {selected.id}</p>
             <p><strong>Data:</strong> {formatDateTime(selected.data_submissao)}</p>
-            <p><strong>Nome:</strong> {selected.nome || 'Não informado'}</p>
+            <p><strong>Nome:</strong> {selected.nome}</p>
+            <p><strong>Telefone:</strong> {selected.telefone}</p>
             <p><strong>E-mail:</strong> {selected.email || 'Não informado'}</p>
             <h3>Mensagem</h3>
-            <div className={styles.observacoesCompletas}>
-              {selected.mensagem}
+            <div className={styles.mensagemCompleta}>
+              {selected.mensagem || 'Nenhuma mensagem deixada.'}
             </div>
           </div>
         )}

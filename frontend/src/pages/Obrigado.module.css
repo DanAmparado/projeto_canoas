@@ -1,149 +1,125 @@
 .container {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background-color: transparent;
 }
 
 .card {
-  max-width: 640px;
+  max-width: 650px;
   width: 100%;
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 10px 10px 0 var(--accent-red-dark);
-  padding: 0;
-  text-align: center;
+  background-color: var(--canoas-blue);
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 .tituloBox {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  padding: 20px;
-  border-bottom: 3px solid #000000;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
+  padding: 25px;
+  text-align: center;
 }
 
 .tituloBox h1 {
   font-family: var(--font-title);
-  font-size: 1.8rem;
-  text-transform: uppercase;
+  font-size: 2.5rem;
   margin: 0;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
 }
 
 .corpoBox {
-  padding: 30px 25px 20px;
+  padding: 30px;
+  text-align: center;
 }
 
 .message {
-  color: var(--text-primary);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin-bottom: 15px;
-  line-height: 1.7;
-  font-size: 1rem;
-  font-weight: 700;
+}
+
+.highlight {
+  color: var(--text-primary);
+  font-family: var(--font-marker);
+  font-size: 1.5rem;
+  margin-top: 25px;
 }
 
 .buttons {
   display: flex;
   gap: 15px;
   justify-content: center;
-  padding: 0 25px 30px;
+  padding: 0 30px 30px;
   flex-wrap: wrap;
 }
 
-.btnPrimary,
-.btnSecondary {
+.btnPrimary, .btnSecondary {
   display: inline-block;
   padding: 12px 25px;
   font-family: var(--font-title);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 1.2rem;
   text-decoration: none;
-  border: 2px solid #000000;
-  transition: transform 0.1s, box-shadow 0.1s;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
 }
 
 .btnPrimary {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  box-shadow: 4px 4px 0 #000000;
-}
-
-.btnPrimary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
-  text-decoration: none;
+  background-color: var(--canoas-alert);
+  color: #FFFFFF;
 }
 
 .btnSecondary {
-  background-color: transparent;
-  color: var(--accent-yellow);
-  border: 2px solid var(--accent-yellow);
-  box-shadow: 4px 4px 0 var(--accent-yellow);
+  background-color: var(--canoas-green);
+  color: #FFFFFF;
 }
 
-.btnSecondary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--accent-yellow);
+.btnPrimary:hover, .btnSecondary:hover {
+  transform: scale(1.05);
   text-decoration: none;
 }
 
-/* Modo alto contraste */
-:global(html.alto-contraste) .card {
-  border-color: #FFFFFF;
-  box-shadow: 10px 10px 0 #FFFFFF;
+/* ============================================================
+   ALTO CONTRASTE
+   ============================================================ */
+html.alto-contraste .card {
+  background-color: #1a1a1a !important;
+  border: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .tituloBox {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border-bottom-color: #FFFFFF;
+html.alto-contraste .tituloBox {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .btnPrimary {
-  border-color: #FFFFFF;
-  box-shadow: 4px 4px 0 #FFFFFF;
+html.alto-contraste .tituloBox h1,
+html.alto-contraste .highlight {
+  color: #FFC800 !important;
 }
 
-:global(html.alto-contraste) .btnPrimary:hover {
-  box-shadow: 6px 6px 0 #FFFFFF;
+html.alto-contraste .message {
+  color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .btnSecondary {
-  color: var(--accent-yellow);
-  border-color: var(--accent-yellow);
-  box-shadow: 4px 4px 0 var(--accent-yellow);
+html.alto-contraste .btnPrimary,
+html.alto-contraste .btnSecondary {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
-  .card {
-    box-shadow: 6px 6px 0 var(--accent-red-dark);
-  }
-
   .tituloBox h1 {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
-
-  .corpoBox {
-    padding: 25px 18px 15px;
-  }
-
   .message {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
-
   .buttons {
-    padding: 0 18px 25px;
-    gap: 12px;
-  }
-
-  .btnPrimary,
-  .btnSecondary {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 0 20px 20px;
   }
 }

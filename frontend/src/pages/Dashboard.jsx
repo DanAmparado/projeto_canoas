@@ -43,7 +43,6 @@ const Dashboard = () => {
   if (error) return <div className={styles.error}>{error}</div>;
   if (!dados) return <div className={styles.error}>Nenhum dado disponível.</div>;
 
-  // Dados do gráfico diário
   const diasLabels = dados.diario_30dias.map((item) => {
     const [ano, mes, dia] = item.dia.split('-');
     return `${dia}/${mes}`;
@@ -54,30 +53,43 @@ const Dashboard = () => {
     labels: diasLabels,
     datasets: [
       {
-        label: 'Respostas por dia',
+        label: 'Assinaturas por dia',
         data: diasCounts,
-        backgroundColor: 'rgba(255, 200, 0, 0.6)',
-        borderColor: 'rgba(255, 200, 0, 1)',
+        backgroundColor: 'rgba(232, 227, 210, 0.8)', /* Cor Creme */
+        borderColor: 'rgba(232, 227, 210, 1)',
         borderWidth: 1,
       },
     ],
   };
 
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: '#E8E3D2' } /* Creme */
+      }
+    },
+    scales: {
+      x: { ticks: { color: '#E8E3D2' } },
+      y: { ticks: { color: '#E8E3D2' } }
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Dashboard</h2>
+      <h2 className={styles.title}>Dashboard de Mobilização</h2>
       <p className={styles.subtitle}>Bem-vindo, {user?.username}!</p>
 
       <div className={styles.cards}>
         <div className={styles.card}>
-          <h3>Total de respostas</h3>
+          <h3>Total de Assinaturas</h3>
           <p className={styles.cardValue}>{dados.total}</p>
         </div>
       </div>
 
-      <div className={styles.fullWidthChart}>
-        <h3>Respostas nos últimos 30 dias</h3>
-        <Bar data={barData} options={{ responsive: true }} />
+      <div className={styles.chartBox}>
+        <h3>Evolução de Assinaturas (Últimos 30 dias)</h3>
+        <Bar data={barData} options={chartOptions} />
       </div>
     </div>
   );

@@ -14,10 +14,10 @@ const PublicNavbar = () => {
           Início
         </Link>
         <Link to="/manifesto" className={isActive('/manifesto') ? styles.active : ''}>
-          Manifesto
+          Nota Política
         </Link>
         <Link to="/formulario" className={isActive('/formulario') ? styles.active : ''}>
-          Enviar mensagem
+          Assinar o abaixo-assinado
         </Link>
       </div>
       <div className={styles.rightSection}>

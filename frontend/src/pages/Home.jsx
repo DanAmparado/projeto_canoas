@@ -37,7 +37,7 @@ const Home = () => {
             Leia a nota política completa
           </Link>
           <Link to="/formulario" className={styles.btnPrimary}>
-            Enviar denúncia / relato
+            Assinar
           </Link>
         </div>
       </section>

@@ -1,226 +1,97 @@
 .container {
-  padding: 25px 20px 60px;
-  background-color: transparent;
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .title {
-  font-family: var(--font-title);
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  color: var(--accent-yellow);
-  letter-spacing: 0.03em;
+  font-size: 3rem;
+  color: var(--text-primary);
   margin-bottom: 5px;
 }
 
 .subtitle {
-  color: var(--text-muted);
-  font-size: 1rem;
+  color: var(--canoas-cream);
+  font-size: 1.1rem;
   margin-bottom: 30px;
-  font-weight: 700;
 }
 
-/* ============================================================
-   ESTADOS DE CARREGAMENTO E ERRO
-   ============================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: var(--canoas-blue);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  color: var(--canoas-cream);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cardValue {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.chartBox {
+  background-color: var(--canoas-blue);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chartBox h3 {
+  color: var(--canoas-cream);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
 .loadingWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
-}
-
-.loadingWrapper p {
-  margin-top: 15px;
-  color: var(--text-muted);
-  font-weight: 700;
+  min-height: 50vh;
+  color: var(--text-primary);
 }
 
 .error {
-  color: var(--error-text);
-  background-color: var(--error-bg);
-  border: 2px solid var(--error-text);
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* ============================================================
-   CARDS DE RESUMO
-   ============================================================ */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 35px;
-}
-
-.card {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
-  padding: 18px 15px;
-  text-align: center;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0 var(--accent-red-dark);
-}
-
-.card h3 {
-  color: var(--accent-yellow);
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.cardValue {
-  font-family: var(--font-title);
-  font-size: 2rem;
+  background-color: var(--canoas-blue);
   color: var(--text-primary);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.card small {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: block;
-}
-
-/* ============================================================
-   GRÁFICOS
-   ============================================================ */
-.chartsRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-bottom: 30px;
-}
-
-.chartBox {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
-  padding: 18px 15px 20px;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.chartBox h3 {
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
-  color: var(--accent-yellow);
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 15px;
-  line-height: 1.3;
+  margin: 40px auto;
+  max-width: 600px;
 }
 
-.fullWidthChart {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
-  padding: 18px 15px 20px;
-  margin-bottom: 30px;
-  transition: background-color 0.3s, border-color 0.3s;
+/* ALTO CONTRASTE */
+html.alto-contraste .card,
+html.alto-contraste .chartBox,
+html.alto-contraste .error {
+  background-color: #1a1a1a !important;
+  border: 2px solid #FFFFFF !important;
 }
 
-.fullWidthChart h3 {
-  text-align: center;
-  color: var(--accent-yellow);
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 15px;
-  line-height: 1.3;
+html.alto-contraste .card h3,
+html.alto-contraste .chartBox h3,
+html.alto-contraste .subtitle {
+  color: #FFC800 !important;
 }
 
-/* ============================================================
-   MODO ALTO CONTRASTE
-   ============================================================ */
-:global(html.alto-contraste) .card,
-:global(html.alto-contraste) .chartBox,
-:global(html.alto-contraste) .fullWidthChart {
-  border-color: #FFFFFF;
-  box-shadow: 6px 6px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .card:hover {
-  box-shadow: 8px 8px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .card h3,
-:global(html.alto-contraste) .chartBox h3,
-:global(html.alto-contraste) .fullWidthChart h3 {
-  color: var(--accent-yellow);
-}
-
-/* ============================================================
-   RESPONSIVIDADE
-   ============================================================ */
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .chartsRow {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 20px 12px 40px;
-  }
-
-  .title {
-    font-size: 1.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .card {
-    box-shadow: 4px 4px 0 var(--accent-red-dark);
-    padding: 15px 12px;
-  }
-
-  .card h3 {
-    font-size: 0.8rem;
-  }
-
-  .cardValue {
-    font-size: 1.6rem;
-  }
-
-  .chartBox,
-  .fullWidthChart {
-    box-shadow: 4px 4px 0 var(--accent-red-dark);
-    padding: 15px 12px;
-  }
-
-  .chartBox h3,
-  .fullWidthChart h3 {
-    font-size: 0.85rem;
-  }
+html.alto-contraste .cardValue {
+  color: #FFFFFF !important;
 }

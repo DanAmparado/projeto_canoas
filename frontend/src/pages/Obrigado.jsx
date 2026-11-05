@@ -7,23 +7,25 @@ const Obrigado = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.tituloBox}>
-          <h1>Denúncia registrada</h1>
+          <h1>Assinatura Registrada!</h1>
         </div>
-
+        
         <div className={styles.corpoBox}>
           <p className={styles.message}>
-            Sua denúncia foi enviada com sucesso. Cada relato é fundamental para construir
-            um retrato coletivo das condições de trabalho e fortalecer a organização dos
-            trabalhadores e trabalhadoras.
+            Muito obrigado por assinar o abaixo-assinado em defesa do Rio Canoas.
+            Sua voz é fundamental para barrarmos a privatização da nossa água.
           </p>
           <p className={styles.message}>
-            Sua identidade permanece totalmente anônima. Nenhum dado pessoal foi coletado.
+            Nós guardamos seu contato para te avisar sobre as próximas mobilizações, audiências públicas e o dia da votação na Câmara.
+          </p>
+          <p className={styles.highlight}>
+            Fique de olho no seu WhatsApp!
           </p>
         </div>
 
         <div className={styles.buttons}>
           <Link to="/manifesto" className={styles.btnPrimary}>
-            Ler o manifesto
+            Ler a nota política completa
           </Link>
           <Link to="/" className={styles.btnSecondary}>
             Voltar ao início

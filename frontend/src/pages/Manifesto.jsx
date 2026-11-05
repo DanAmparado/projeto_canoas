@@ -54,7 +54,7 @@ const Manifesto = () => {
 
         <div className={styles.buttons}>
           <Link to="/formulario" className={styles.btnPrimary}>
-            Enviar denúncia / relato
+            Assinar o abaixo-assinado
           </Link>
           <Link to="/" className={styles.btnSecondary}>
             Voltar para a página inicial

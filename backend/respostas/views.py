@@ -83,18 +83,19 @@ class ExportarRespostasCSV(APIView):
         queryset = queryset.order_by('-data_submissao')
 
         response = HttpResponse(content_type='text/csv; charset=utf-8')
-        response['Content-Disposition'] = 'attachment; filename="respostas_{}.csv"'.format(
+        response['Content-Disposition'] = 'attachment; filename="assinaturas_{}.csv"'.format(
             timezone.now().strftime('%Y%m%d_%H%M%S')
         )
 
         writer = csv.writer(response, delimiter=';', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(['ID', 'Data/Hora', 'Nome', 'E-mail', 'Mensagem'])
+        writer.writerow(['ID', 'Data/Hora', 'Nome', 'Telefone', 'E-mail', 'Mensagem'])
 
         for r in queryset:
             writer.writerow([
                 r.id,
                 r.data_submissao.strftime('%d/%m/%Y %H:%M:%S'),
                 r.nome or '',
+                r.telefone or '',
                 r.email or '',
                 r.mensagem or ''
             ])

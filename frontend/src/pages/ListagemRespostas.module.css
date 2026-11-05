@@ -1,33 +1,27 @@
 .container {
-  padding: 25px 20px 60px;
-  background-color: transparent;
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .title {
-  font-family: var(--font-title);
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  color: var(--accent-yellow);
-  letter-spacing: 0.03em;
+  font-size: 3rem;
+  color: var(--text-primary);
   margin-bottom: 5px;
 }
 
 .subtitle {
-  color: var(--text-muted);
-  font-size: 1rem;
+  color: var(--canoas-cream);
+  font-size: 1.1rem;
   margin-bottom: 30px;
-  font-weight: 700;
 }
 
-/* ============================================================
-   FILTROS
-   ============================================================ */
 .filters {
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
-  padding: 20px 18px;
+  background-color: var(--canoas-blue);
+  border-radius: 20px;
+  padding: 20px;
   margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .filterRow {
@@ -35,11 +29,6 @@
   flex-wrap: wrap;
   gap: 15px;
   align-items: flex-end;
-  margin-bottom: 12px;
-}
-
-.filterRow:last-child {
-  margin-bottom: 0;
 }
 
 .filterGroup {
@@ -50,175 +39,108 @@
 }
 
 .filterGroup label {
-  color: var(--accent-yellow);
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--canoas-cream);
+  font-weight: 600;
   margin-bottom: 6px;
 }
 
-.filterGroup select,
 .filterGroup input {
-  padding: 8px 10px;
-  background-color: var(--bg-input);
-  color: var(--text-primary);
-  border: 2px solid var(--border-muted);
-  border-radius: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--canoas-green);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: border-color 0.2s;
 }
 
-.filterGroup select:focus,
 .filterGroup input:focus {
   outline: none;
-  border-color: var(--accent-yellow);
+  border-color: var(--canoas-cream);
 }
 
 .filterActions {
   display: flex;
   gap: 10px;
-  align-items: center;
   flex-wrap: wrap;
 }
 
-.btnPrimary,
-.btnSecondary,
-.btnExport {
-  padding: 9px 18px;
+.btnPrimary, .btnSecondary, .btnExport {
+  padding: 10px 20px;
+  border-radius: 10px;
   font-family: var(--font-title);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  border: 2px solid #000000;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s, color 0.2s;
-  border-radius: 0;
-  white-space: nowrap;
+  transition: transform 0.2s;
+  border: none;
 }
 
-.btnPrimary {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  box-shadow: 4px 4px 0 #000000;
-}
+.btnPrimary { background-color: var(--canoas-cream); color: var(--text-inverse); }
+.btnSecondary { background-color: var(--canoas-green); color: #FFFFFF; }
+.btnExport { background-color: var(--canoas-alert); color: #FFFFFF; }
 
-.btnPrimary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
-}
-
-.btnSecondary {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--text-primary);
-  box-shadow: 4px 4px 0 var(--text-primary);
-}
-
-.btnSecondary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--text-primary);
-}
-
-.btnExport {
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 2px solid #000000;
-  box-shadow: 4px 4px 0 #000000;
-}
-
-.btnExport:hover:not(:disabled) {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
+.btnPrimary:hover, .btnSecondary:hover, .btnExport:hover:not(:disabled) {
+  transform: scale(1.05);
 }
 
 .btnExport:disabled {
-  background-color: #6c757d;
-  color: #ffffff;
+  opacity: 0.6;
   cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-  opacity: 0.7;
 }
 
-/* ============================================================
-   CONTADOR E TABELA
-   ============================================================ */
 .totalCount {
-  color: var(--accent-yellow);
+  color: var(--text-primary);
   font-family: var(--font-title);
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .tableWrapper {
   overflow-x: auto;
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
-  background-color: var(--bg-card);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-}
-
-.table th,
-.table td {
-  border: 1px solid var(--border-muted);
-  padding: 12px 14px;
-  text-align: left;
-  font-size: 0.95rem;
+  background-color: var(--canoas-blue);
+  color: #FFFFFF;
 }
 
 .table th {
-  background-color: #000000;
-  color: var(--accent-yellow);
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
+  padding: 15px;
+  text-align: left;
   font-family: var(--font-title);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid var(--accent-yellow);
+  font-size: 1.2rem;
 }
 
-.table tbody tr:nth-of-type(odd) {
-  background-color: rgba(255, 200, 0, 0.04);
+.table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--canoas-green);
 }
 
 .table tbody tr:hover {
-  background-color: rgba(255, 200, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .btnDetail {
-  padding: 6px 14px;
-  background-color: var(--accent-yellow);
-  color: #000000;
-  border: 2px solid #000000;
+  background-color: var(--canoas-green);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
   font-family: var(--font-title);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 3px 3px 0 #000000;
-  transition: transform 0.1s, box-shadow 0.1s;
-  border-radius: 0;
 }
 
 .btnDetail:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0 #000000;
+  background-color: var(--canoas-cream);
+  color: var(--text-inverse);
 }
 
-/* ============================================================
-   PAGINAÇÃO
-   ============================================================ */
 .pagination {
   display: flex;
   justify-content: center;
@@ -228,22 +150,13 @@
 }
 
 .pagination button {
-  padding: 8px 16px;
-  background-color: transparent;
-  color: var(--accent-yellow);
-  border: 2px solid var(--accent-yellow);
+  background-color: var(--canoas-blue);
+  color: var(--text-primary);
+  border: 2px solid var(--canoas-cream);
+  padding: 8px 15px;
+  border-radius: 10px;
   font-family: var(--font-title);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  border-radius: 0;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: var(--accent-yellow);
-  color: #000000;
 }
 
 .pagination button:disabled {
@@ -251,227 +164,63 @@
   cursor: not-allowed;
 }
 
-.pagination span {
+.empty, .error {
+  background-color: var(--canoas-blue);
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-/* ============================================================
-   ESTADOS
-   ============================================================ */
-.empty {
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
-  padding: 40px 20px;
-  color: var(--text-muted);
-  font-weight: 700;
-  font-size: 1rem;
-  background-color: var(--bg-card);
-  border: 3px solid var(--accent-yellow);
-  box-shadow: 6px 6px 0 var(--accent-red-dark);
+  font-size: 1.2rem;
 }
 
-.error {
-  color: var(--error-text);
-  background-color: var(--error-bg);
-  border: 2px solid var(--error-text);
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* ============================================================
-   MODAL DE DETALHES
-   ============================================================ */
-.detalhes {
-  font-size: 0.9rem;
-  color: var(--text-primary);
-}
-
-.detalhes h3 {
-  margin: 20px 0 10px 0;
-  font-family: var(--font-title);
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--accent-yellow);
-  letter-spacing: 0.03em;
-  border-bottom: 2px solid var(--accent-yellow);
-  padding-bottom: 6px;
-}
-
-.detalhes h3:first-child {
-  margin-top: 0;
-}
-
-.detalhes p {
-  margin: 6px 0;
+.detalhes p { margin-bottom: 10px; font-size: 1.1rem; }
+.detalhes h3 { margin-top: 20px; margin-bottom: 10px; color: var(--canoas-cream); }
+.mensagemCompleta {
+  background-color: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
   line-height: 1.6;
-  font-weight: 700;
-}
-
-.detalhes p strong {
-  color: var(--accent-yellow);
-  font-weight: 800;
-}
-
-.observacoesCompletas {
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-muted);
-  padding: 12px;
   white-space: pre-wrap;
-  max-height: 200px;
-  overflow-y: auto;
-  line-height: 1.6;
-  font-weight: 700;
-  color: var(--text-primary);
 }
 
-.jsonData {
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-muted);
-  padding: 12px;
-  font-size: 0.85rem;
-  max-height: 200px;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  color: var(--text-primary);
+/* ALTO CONTRASTE */
+html.alto-contraste .filters,
+html.alto-contraste .table,
+html.alto-contraste .empty,
+html.alto-contraste .error {
+  background-color: #1a1a1a !important;
+  border: 2px solid #FFFFFF !important;
 }
 
-/* ============================================================
-   MODO ALTO CONTRASTE
-   ============================================================ */
-:global(html.alto-contraste) .filters,
-:global(html.alto-contraste) .tableWrapper,
-:global(html.alto-contraste) .empty {
-  border-color: #FFFFFF;
-  box-shadow: 6px 6px 0 #FFFFFF;
+html.alto-contraste .table th {
+  background-color: #000000 !important;
+  color: #FFC800 !important;
+  border-bottom: 2px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .table th {
-  background-color: #000000;
-  color: var(--accent-yellow);
-  border-bottom-color: #FFFFFF;
+html.alto-contraste .table td {
+  border-bottom: 1px solid #FFFFFF;
 }
 
-:global(html.alto-contraste) .btnPrimary,
-:global(html.alto-contraste) .btnExport,
-:global(html.alto-contraste) .btnDetail {
-  border-color: #FFFFFF;
-  box-shadow: 4px 4px 0 #FFFFFF;
+html.alto-contraste .filterGroup label,
+html.alto-contraste .totalCount,
+html.alto-contraste .detalhes p,
+html.alto-contraste .detalhes h3 {
+  color: #FFC800 !important;
 }
 
-:global(html.alto-contraste) .btnPrimary:hover,
-:global(html.alto-contraste) .btnExport:hover:not(:disabled),
-:global(html.alto-contraste) .btnDetail:hover {
-  box-shadow: 6px 6px 0 #FFFFFF;
+html.alto-contraste .filterGroup input {
+  background-color: #000000 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
-:global(html.alto-contraste) .btnSecondary {
-  border-color: #FFFFFF;
-  color: #FFFFFF;
-  box-shadow: 4px 4px 0 #FFFFFF;
-}
-
-:global(html.alto-contraste) .btnSecondary:hover {
-  box-shadow: 6px 6px 0 #FFFFFF;
-}
-
-/* ============================================================
-   RESPONSIVIDADE
-   ============================================================ */
-@media (max-width: 768px) {
-  .filterRow {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .filterGroup {
-    min-width: 100%;
-  }
-
-  .filterActions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .filterActions button {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 20px 12px 40px;
-  }
-
-  .title {
-    font-size: 1.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .filters {
-    padding: 15px 12px;
-    box-shadow: 4px 4px 0 var(--accent-red-dark);
-  }
-
-  .tableWrapper {
-    box-shadow: 4px 4px 0 var(--accent-red-dark);
-  }
-
-  .table th,
-  .table td {
-    padding: 10px 8px;
-    font-size: 0.85rem;
-  }
-
-  .empty {
-    padding: 30px 15px;
-    box-shadow: 4px 4px 0 var(--accent-red-dark);
-  }
-
-  .pagination {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .pagination button {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .pagination span {
-    font-size: 0.85rem;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .tableWrapper {
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .tableWrapper::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Aviso visual de que a tabela pode ser rolada */
-  .tableWrapper {
-    position: relative;
-  }
-
-  .tableWrapper::after {
-    content: '→ deslize para ver mais';
-    display: block;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    padding: 6px;
-    font-weight: 700;
-  }
+html.alto-contraste .btnPrimary,
+html.alto-contraste .btnSecondary,
+html.alto-contraste .btnExport,
+html.alto-contraste .btnDetail,
+html.alto-contraste .pagination button {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
 }

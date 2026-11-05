@@ -3,9 +3,11 @@ from django.db import models
 class Resposta(models.Model):
     nome = models.CharField(
         max_length=200,
-        blank=True,
-        null=True,
-        verbose_name="Nome (opcional)"
+        verbose_name="Nome completo"
+    )
+    telefone = models.CharField(
+        max_length=20,
+        verbose_name="Telefone/WhatsApp"
     )
     email = models.EmailField(
         blank=True,
@@ -13,7 +15,9 @@ class Resposta(models.Model):
         verbose_name="E-mail (opcional)"
     )
     mensagem = models.TextField(
-        verbose_name="Mensagem"
+        blank=True,
+        null=True,
+        verbose_name="Mensagem (opcional)"
     )
     data_submissao = models.DateTimeField(
         auto_now_add=True,
@@ -21,4 +25,4 @@ class Resposta(models.Model):
     )
 
     def __str__(self):
-        return f"Resposta #{self.id} - {self.data_submissao.strftime('%d/%m/%Y %H:%M')}"
+        return f"Assinatura #{self.id} - {self.nome}"
